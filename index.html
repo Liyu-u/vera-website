@@ -1,9 +1,102 @@
-<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="VERA — Verbal-to-Embodied Reasoning and Action student research collective."><title>VERA — Research OS</title><link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./motion.css"></head><body>
-<div class="scroll-progress" aria-hidden="true"></div><header class="site-header"><a class="brand" href="#top" data-magnetic aria-label="VERA 首页"><svg viewBox="0 0 42 28" aria-hidden="true"><path d="M2 2h9l10 19L31 2h9L25 27h-8L2 2Z"/></svg><span>VERA</span></a><nav class="site-nav" aria-label="主导航"><a href="#system">SYSTEM</a><a href="#research">RESEARCH</a><a href="#team">TEAM</a><a href="#contact">CONTACT</a></nav><a class="demo-link" href="http://localhost:8765/" data-magnetic>LIVE PROJECT <span>↗</span></a></header>
-<main id="top"><section class="hero" aria-labelledby="hero-title"><div class="hero-intro" data-reveal><p class="status"><span></span> STUDENT-LED RESEARCH COLLECTIVE · 2026</p><h1 id="hero-title">LANGUAGE<br>BECOMES<br><span>ACTION.</span></h1><p class="hero-summary">VERA 研究从开放式语言指令到可约束、可执行、可审计行动的完整链路。</p></div>
-<div class="os-panel" id="system" data-reveal><div class="os-bar"><span>VERA / RESEARCH OS</span><span>LOOP STATUS <b>ACTIVE</b></span></div><div class="instruction"><span>INPUT / NATURAL LANGUAGE</span><p>“识别目标物体，将它安全地移动到指定区域。”</p></div><div class="pipeline" role="tablist" aria-label="VERA research pipeline"><button type="button" data-system-stage="intent" role="tab" aria-selected="true"><i>A</i><span>INTENT</span><small>目标绑定</small></button><button type="button" data-system-stage="strategy" role="tab" aria-selected="false"><i>B</i><span>STRATEGY</span><small>策略生成</small></button><button type="button" data-system-stage="execution" role="tab" aria-selected="false"><i>C</i><span>EXECUTION</span><small>安全执行</small></button><button type="button" data-system-stage="evidence" role="tab" aria-selected="false"><i>D</i><span>EVIDENCE</span><small>反馈修复</small></button></div><div class="stage-readout" aria-live="polite"><div><span>CURRENT STATE</span><strong id="stageTitle">INTENT / BINDING</strong></div><p id="stageText">将自然语言与场景对象绑定，输出结构化 task.v1；不让模型猜测对象身份。</p><code id="stageCode">task.v1 · object_id · target_id · constraints[]</code></div><div class="os-foot"><span>INPUT</span><i></i><span>CONSTRAINT</span><i></i><span>EXECUTION</span><i></i><span>PROOF</span></div></div><div class="hero-bottom" data-reveal><span>VERBAL-TO-EMBODIED</span><a href="#research">SCROLL TO INSPECT <b>↓</b></a><span>REASONING AND ACTION</span></div></section>
-<section class="manifesto section-shell" id="research"><div class="section-key" data-reveal><span>RESEARCH THESIS</span><span>01 — 04</span></div><div class="manifesto-grid"><h2 data-reveal>智能不止要<br>“给出答案”，<br>更要<span>为行动负责。</span></h2><div class="manifesto-copy" data-reveal><p>我们关注的是智能系统最难也最容易被忽略的一段距离：从“理解人的意思”，到“在真实约束中完成任务”。</p><p>因此，VERA 将安全门禁、执行证据、失败诊断与有限修复放进同一条研究主线，而不是事后补丁。</p></div></div></section>
-<section class="architecture section-shell"><div class="section-key" data-reveal><span>OPERATING MODEL</span><span>TYPED CLOSED LOOP</span></div><div class="architecture-grid"><div class="arch-copy" data-reveal><h2>ONE LOOP.<br>FOUR RESPONSIBILITIES.</h2><p>模块之间只交换结构化契约。每个阶段都知道自己能决定什么，也知道什么不能决定。</p><a href="http://localhost:8765/">进入独立项目演示 <span>↗</span></a></div><ol class="module-list"><li data-reveal><b>A</b><div><strong>INTENT &amp; BINDING</strong><p>理解任务、绑定场景对象、识别风险。</p></div><code>task.v1</code></li><li data-reveal><b>B</b><div><strong>STRATEGY GENERATION</strong><p>将任务降低为受限原子动作序列。</p></div><code>strategy.v1</code></li><li data-reveal><b>C</b><div><strong>EXECUTION &amp; VALIDATION</strong><p>预检、执行、监控，并保留最终事实。</p></div><code>execution.v1</code></li><li data-reveal><b>D</b><div><strong>DIAGNOSIS &amp; RECOVERY</strong><p>定位失败，仅对可恢复问题生成候选修复。</p></div><code>feedback.v1</code></li></ol></div></section>
-<section class="evidence section-shell"><div class="section-key" data-reveal><span>EVIDENCE, NOT DECORATION</span><span>PROVENANCE FIRST</span></div><div class="evidence-head" data-reveal><h2>每一次成功，<br>都必须说明<span>在哪里成功。</span></h2><p>网页、报告与演示明确区分规则结果、Mock 闭环、提供方调用、Isaac Sim 与真机验证。高级感来自可信度，不来自放大的数字。</p></div><div class="evidence-board" data-reveal><div class="evidence-axis"><span>ENVIRONMENT</span><span>CLAIM BOUNDARY</span><span>STATE</span></div><div><strong>CONTRACT / MOCK</strong><p>接口、状态机与安全分支的确定性回归</p><span class="state verified">VERIFIED</span></div><div><strong>ISAAC SIM / RGB-D</strong><p>仿真相机观测、深度反投影与执行链路</p><span class="state active">IN RESEARCH</span></div><div><strong>REAL-WORLD ROBOT</strong><p>真实硬件部署与长期运行表现</p><span class="state pending">NOT CLAIMED</span></div></div></section>
-<section class="team section-shell" id="team"><div class="section-key" data-reveal><span>TEAM STRUCTURE</span><span>PEOPLE → RESPONSIBILITIES</span></div><div class="team-grid"><div data-reveal><h2>A SMALL TEAM<br>WITH A FULL-STACK<br>RESEARCH QUESTION.</h2><p>团队成员信息将在确认后发布。当前主页只展示真实职责，不使用虚构姓名、头像或履历。</p></div><div class="role-matrix" data-reveal><span>LANGUAGE</span><span>PLANNING</span><span>ROBOTICS</span><span>EVALUATION</span><strong>Intent grounding</strong><strong>Policy &amp; CodeArts</strong><strong>Isaac Sim &amp; RGB-D</strong><strong>Trace &amp; recovery</strong></div></div></section>
-<section class="contact section-shell" id="contact"><div data-reveal><span class="contact-mark">V</span><h2>BUILD THE LINK<br>BETWEEN WORDS<br>AND THE WORLD.</h2></div><div class="contact-meta" data-reveal><p>合作、指导与加入团队的公开联系方式将在确认后上线。</p><a href="http://localhost:8765/">VIEW LIVE PROJECT <span>↗</span></a></div></section></main><footer class="site-footer section-shell"><span>© 2026 VERA</span><span>VERBAL-TO-EMBODIED REASONING AND ACTION</span><a href="#top">BACK TO TOP ↑</a></footer><script src="./app.js"></script></body></html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="VERA — Verbal-to-Embodied Reasoning and Action，学生创新研究团队。">
+  <title>VERA — Verbal-to-Embodied Reasoning and Action</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./motion.css">
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="VERA 首页"><svg viewBox="0 0 42 28" aria-hidden="true"><path d="M2 2h9l10 19L31 2h9L25 27h-8L2 2Z"/></svg><span>VERA</span></a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="#research">研究方向</a><a href="#outcomes">研究成果</a><a href="#process">科研过程</a><a href="#team">团队成员</a>
+    </nav>
+    <a class="header-link" href="https://github.com/Liyu-u/vera-website">PROJECT ↗</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media" data-parallax>
+        <img src="./assets/images/team-meeting.jpg" alt="VERA 团队成员围绕实验方案开展讨论">
+      </div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <h1>VERA</h1>
+        <p class="hero-name">VERBAL-TO-EMBODIED<br>REASONING AND ACTION</p>
+        <p class="hero-cn">从语言理解走向真实行动。<br>我们是一支面向具身智能的学生创新研究团队。</p>
+      </div>
+      <div class="hero-foot"><span>STUDENT RESEARCH TEAM · 2026</span><a href="#research">向下了解研究 ↓</a></div>
+    </section>
+
+    <section class="intro section-shell" id="research">
+      <div class="intro-lead" data-reveal>
+        <h2>我们研究智能<br>如何理解世界，<br>并在其中行动。</h2>
+        <p>VERA 关注自然语言、任务推理、机器人感知与安全执行之间的连接。系统不是终点，而是我们验证研究问题的一种方式。</p>
+      </div>
+      <div class="research-lines">
+        <article data-reveal><span>Language</span><h3>语言与任务理解</h3><p>研究开放式人类意图如何被澄清、约束，并与环境中的真实对象建立可靠对应。</p></article>
+        <article data-reveal><span>Reasoning</span><h3>具身任务推理</h3><p>把目标转化为能够被机器人执行的步骤，让策略生成接受环境、安全和能力边界的共同约束。</p></article>
+        <article data-reveal><span>Action</span><h3>安全执行与反馈</h3><p>关注执行前检查、过程监测、结果取证以及失败后的有限修复，使行动过程可以被复核。</p></article>
+      </div>
+    </section>
+
+    <section class="outcomes section-shell" id="outcomes">
+      <header class="section-head" data-reveal><h2>研究成果</h2><p>SELECTED OUTCOMES</p></header>
+      <article class="outcome outcome-wide" data-reveal>
+        <figure><img src="./assets/images/robotic-arm-lab.jpg" alt="实验室工业机械臂与传感器实验平台"><figcaption>ROBOTIC MANIPULATION · LAB EQUIPMENT</figcaption></figure>
+        <div><span>具身执行实验</span><h3>面向复杂环境的感知、决策与执行</h3><p>围绕机械臂、传感器与任务环境开展具身执行研究，持续验证从指令理解到动作反馈的完整链路。</p></div>
+      </article>
+      <article class="outcome outcome-offset" data-reveal>
+        <figure><img src="./assets/images/robot-dog-debugging.jpg" alt="团队成员在实验室调试四足机器人"><figcaption>FIELD DEBUGGING · QUADRUPED ROBOT</figcaption></figure>
+        <div><span>机器人现场调试</span><h3>让算法经得起真实设备与现场条件</h3><p>通过设备连接、遥操作与现场观察，记录算法假设与机器人实际表现之间的差异。</p></div>
+      </article>
+      <article class="outcome outcome-dark" data-reveal>
+        <figure><img src="./assets/images/server-room-collaboration.jpg" alt="团队成员在机房共同检查实验运行数据"><figcaption>SYSTEM VALIDATION · COLLABORATIVE TESTING</figcaption></figure>
+        <div><span>系统联调与验证</span><h3>以可复现过程积累研究证据</h3><p>从模块接口到完整流程，团队共同完成联调、记录和复核，并明确区分仿真、测试与真实环境结论。</p></div>
+      </article>
+    </section>
+
+    <section class="process" id="process" data-carousel tabindex="0" aria-label="VERA 科研过程照片轮播">
+      <div class="process-title section-shell" data-reveal><h2>研究不是一次演示，<br>而是一段持续发生的过程。</h2><p>RESEARCH IN PROGRESS</p></div>
+      <div class="carousel-viewport">
+        <div class="carousel-track" data-carousel-track>
+          <figure class="process-slide"><img src="./assets/images/server-room-collaboration.jpg" alt="团队在机房进行软硬件联调"><figcaption><b>联调</b><span>检查数据、接口与设备状态</span></figcaption></figure>
+          <figure class="process-slide"><img src="./assets/images/robot-dog-debugging.jpg" alt="成员使用控制设备调试四足机器人"><figcaption><b>实验</b><span>在机器人现场验证控制逻辑</span></figcaption></figure>
+          <figure class="process-slide"><img src="./assets/images/wearable-debugging.jpg" alt="两位成员现场调试可穿戴设备"><figcaption><b>协作</b><span>连接硬件并逐项排查问题</span></figcaption></figure>
+          <figure class="process-slide"><img src="./assets/images/team-meeting.jpg" alt="四位成员围桌讨论研究方案"><figcaption><b>讨论</b><span>把实验观察转化为下一步方案</span></figcaption></figure>
+        </div>
+      </div>
+      <div class="carousel-controls section-shell">
+        <div><button type="button" data-carousel-prev aria-label="上一张科研过程照片">←</button><button type="button" data-carousel-next aria-label="下一张科研过程照片">→</button></div>
+        <p aria-live="polite" data-carousel-status>01 / 04</p>
+        <div class="carousel-progress" aria-hidden="true"><i data-carousel-progress></i></div>
+      </div>
+    </section>
+
+    <section class="team section-shell" id="team">
+      <header class="section-head" data-reveal><h2>团队成员</h2><p>成员按姓名拼音顺序排列<br>Members listed alphabetically by Pinyin</p></header>
+      <div class="team-list">
+        <article data-member="Guo Jiateng" data-reveal><div class="portrait crop-b guo"><img src="./assets/images/members-b.png" alt="郭家腾证件照"></div><div><h3>郭家腾</h3><p>Guo Jiateng</p></div><span>团队成员</span></article>
+        <article data-member="Li Hanxiang" data-reveal><div class="portrait crop-a li"><img src="./assets/images/members-a.png" alt="李瀚翔证件照"></div><div><h3>李瀚翔</h3><p>Li Hanxiang</p></div><span>团队成员</span></article>
+        <article data-member="Liu Ke" data-reveal><div class="portrait crop-a liu"><img src="./assets/images/members-a.png" alt="刘珂证件照"></div><div><h3>刘珂</h3><p>Liu Ke</p></div><span>团队成员</span></article>
+        <article data-member="Sun Ruolin" data-reveal><div class="portrait crop-a sun"><img src="./assets/images/members-a.png" alt="孙若琳证件照"></div><div><h3>孙若琳</h3><p>Sun Ruolin</p></div><span>团队成员</span></article>
+        <article data-member="Tang Ruoming" data-reveal><div class="portrait crop-a tang"><img src="./assets/images/members-a.png" alt="汤若铭证件照"></div><div><h3>汤若铭</h3><p>Tang Ruoming</p></div><span>团队成员</span></article>
+        <article data-member="Wang Mubai" data-reveal><div class="portrait crop-b mubai"><img src="./assets/images/members-b.png" alt="汪慕白证件照"></div><div><h3>汪慕白</h3><p>Wang Mubai</p></div><span>团队成员</span></article>
+        <article data-member="Wang Yihang" data-reveal><div class="portrait crop-b yihang"><img src="./assets/images/members-b.png" alt="王翊航证件照"></div><div><h3>王翊航</h3><p>Wang Yihang</p></div><span class="lead-role">团队负责人</span></article>
+        <article data-member="Zhao Yixin" data-reveal><div class="portrait crop-b zhao"><img src="./assets/images/members-b.png" alt="赵以鑫证件照"></div><div><h3>赵以鑫</h3><p>Zhao Yixin</p></div><span>团队成员</span></article>
+      </div>
+    </section>
+
+    <section class="place" id="contact">
+      <img src="./assets/images/college-building.jpg" alt="团队开展学习与研究活动的学院建筑">
+      <div><p>在校园里提出问题，<br>在实验中寻找答案。</p><span>VERA · STUDENT RESEARCH COLLECTIVE</span></div>
+    </section>
+  </main>
+  <footer class="site-footer section-shell"><a class="brand" href="#top"><svg viewBox="0 0 42 28" aria-hidden="true"><path d="M2 2h9l10 19L31 2h9L25 27h-8L2 2Z"/></svg><span>VERA</span></a><p>Verbal-to-Embodied Reasoning and Action</p><a href="#top">返回顶部 ↑</a></footer>
+  <script src="./app.js"></script>
+</body>
+</html>

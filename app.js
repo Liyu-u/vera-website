@@ -1,1 +1,64 @@
-(function(){"use strict";var root=document.documentElement;var reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");var raf=0;function frame(fn){if(raf)return;raf=window.requestAnimationFrame(function(){raf=0;fn();});}function initReveal(){var items=document.querySelectorAll("[data-reveal]");if(reduceMotion.matches||!("IntersectionObserver" in window)){items.forEach(function(item){item.classList.add("is-visible");});return;}var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}});},{threshold:.12,rootMargin:"0px 0px -6%"});items.forEach(function(item){observer.observe(item);});}function initScrollState(){var progress=document.querySelector(".scroll-progress");var links=Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));var sections=links.map(function(link){return document.querySelector(link.getAttribute("href"));}).filter(Boolean);function update(){var top=window.scrollY||root.scrollTop;var length=root.scrollHeight-window.innerHeight;if(progress)progress.style.transform="scaleX("+(length>0?top/length:0)+")";var active=sections[0];sections.forEach(function(section){if(section.getBoundingClientRect().top<window.innerHeight*.42)active=section;});links.forEach(function(link){var current=active&&link.getAttribute("href")==="#"+active.id;link.classList.toggle("is-active",Boolean(current));if(current)link.setAttribute("aria-current","location");else link.removeAttribute("aria-current");});}window.addEventListener("scroll",function(){frame(update);},{passive:true});update();}function initSystemSequence(){var stages={intent:["INTENT / BINDING","将自然语言与场景对象绑定，输出结构化 task.v1；不让模型猜测对象身份。","task.v1 · object_id · target_id · constraints[]"],strategy:["STRATEGY / GENERATION","将已绑定任务转化为允许清单内的原子动作，并在执行前通过安全门。","strategy.v1 · action[] · parameters · safety_gate"],execution:["EXECUTION / VALIDATION","在 Isaac Sim 或指定后端中执行、监控，并回读最终状态与安全事件。","execution.v1 · final_pose · trajectory · safety_events[]"],evidence:["EVIDENCE / RECOVERY","根据真实执行事实定位原因；只有可恢复失败才能形成有限候选修复。","feedback.v1 · cause · retryable · patch · provenance"]};var buttons=Array.from(document.querySelectorAll("[data-system-stage]"));var readout=document.querySelector(".stage-readout"),title=document.getElementById("stageTitle"),text=document.getElementById("stageText"),code=document.getElementById("stageCode");function select(index,focus){var button=buttons[index];if(!button)return;buttons.forEach(function(item,i){item.setAttribute("aria-selected",String(i===index));item.tabIndex=i===index?0:-1;});var data=stages[button.dataset.systemStage];if(readout&&!reduceMotion.matches)readout.classList.add("is-changing");window.setTimeout(function(){title.textContent=data[0];text.textContent=data[1];code.textContent=data[2];if(readout)readout.classList.remove("is-changing");if(focus)button.focus();},reduceMotion.matches?0:170);}buttons.forEach(function(button,index){button.tabIndex=index===0?0:-1;button.addEventListener("click",function(){select(index,false);});button.addEventListener("keydown",function(event){var next;if(event.key==="ArrowRight"||event.key==="ArrowDown")next=(index+1)%buttons.length;if(event.key==="ArrowLeft"||event.key==="ArrowUp")next=(index-1+buttons.length)%buttons.length;if(event.key==="Home")next=0;if(event.key==="End")next=buttons.length-1;if(next!==undefined){event.preventDefault();select(next,true);}});});}function initMagnetic(){if(reduceMotion.matches||!window.matchMedia("(pointer: fine)").matches)return;document.querySelectorAll("[data-magnetic]").forEach(function(item){item.addEventListener("pointermove",function(event){var rect=item.getBoundingClientRect();item.style.transform="translate("+((event.clientX-rect.left-rect.width/2)*.1)+"px,"+((event.clientY-rect.top-rect.height/2)*.1)+"px)";});item.addEventListener("pointerleave",function(){item.style.transform="";});});}initReveal();initScrollState();initSystemSequence();initMagnetic();root.classList.add("motion-ready");}());
+(function(){
+  "use strict";
+  var root=document.documentElement;
+  var reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+  var raf=0;
+  function requestFrame(callback){if(raf)return;raf=window.requestAnimationFrame(function(){raf=0;callback();});}
+  function initReveal(){
+    var items=document.querySelectorAll("[data-reveal]");
+    if(reduceMotion.matches||!("IntersectionObserver" in window)){items.forEach(function(item){item.classList.add("is-visible");});return;}
+    var observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add("is-visible");observer.unobserve(entry.target);}});},{threshold:.12,rootMargin:"0px 0px -7%"});
+    items.forEach(function(item){observer.observe(item);});
+  }
+  function initScrollState(){
+    var progress=document.querySelector(".scroll-progress");
+    var links=Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
+    var sections=links.map(function(link){return document.querySelector(link.getAttribute("href"));}).filter(Boolean);
+    function update(){
+      var top=window.scrollY||root.scrollTop;
+      var length=root.scrollHeight-window.innerHeight;
+      if(progress)progress.style.transform="scaleX("+(length>0?top/length:0)+")";
+      if(!reduceMotion.matches)root.style.setProperty("--hero-shift",Math.min(top*.08,54)+"px");
+      var active=sections[0];
+      sections.forEach(function(section){if(section.getBoundingClientRect().top<=window.innerHeight*.4)active=section;});
+      links.forEach(function(link){var current=active&&link.getAttribute("href")==="#"+active.id;link.classList.toggle("is-active",Boolean(current));if(current)link.setAttribute("aria-current","location");else link.removeAttribute("aria-current");});
+    }
+    window.addEventListener("scroll",function(){requestFrame(update);},{passive:true});update();
+  }
+  function initCarousel(){
+    var carousel=document.querySelector("[data-carousel]");
+    if(!carousel)return;
+    var track=carousel.querySelector("[data-carousel-track]");
+    var slides=Array.from(track.children);
+    var previous=carousel.querySelector("[data-carousel-prev]");
+    var next=carousel.querySelector("[data-carousel-next]");
+    var status=carousel.querySelector("[data-carousel-status]");
+    var progress=carousel.querySelector("[data-carousel-progress]");
+    var index=0,timer=0,paused=false;
+    function slideOffset(target){return slides[target].offsetLeft-track.offsetLeft;}
+    function render(){
+      if(window.matchMedia("(max-width: 600px)").matches)return;
+      track.style.transform="translate3d(-"+slideOffset(index)+"px,0,0)";
+      status.textContent=String(index+1).padStart(2,"0")+" / "+String(slides.length).padStart(2,"0");
+      progress.style.transform="scaleX("+((index+1)/slides.length)+")";
+    }
+    function goToSlide(target,userInitiated){
+      index=(target+slides.length)%slides.length;
+      render();
+      if(userInitiated){paused=true;window.clearInterval(timer);}
+    }
+    function start(){window.clearInterval(timer);if(!reduceMotion.matches&&!paused&&!document.hidden)timer=window.setInterval(function(){goToSlide(index+1,false);},5200);}
+    previous.addEventListener("click",function(){goToSlide(index-1,true);});
+    next.addEventListener("click",function(){goToSlide(index+1,true);});
+    carousel.addEventListener("keydown",function(event){if(event.key==="ArrowLeft"){event.preventDefault();goToSlide(index-1,true);}if(event.key==="ArrowRight"){event.preventDefault();goToSlide(index+1,true);}});
+    carousel.addEventListener("mouseenter",function(){window.clearInterval(timer);});
+    carousel.addEventListener("mouseleave",start);
+    carousel.addEventListener("focusin",function(){window.clearInterval(timer);});
+    carousel.addEventListener("pointerdown",function(){paused=true;window.clearInterval(timer);});
+    document.addEventListener("visibilitychange",function(){if(document.hidden)window.clearInterval(timer);else start();});
+    window.addEventListener("resize",function(){requestFrame(render);});
+    reduceMotion.addEventListener("change",function(){paused=reduceMotion.matches;if(paused)window.clearInterval(timer);else start();});
+    render();start();
+  }
+  initReveal();initScrollState();initCarousel();root.classList.add("motion-ready");
+}());
