@@ -13,16 +13,16 @@ Replace the current system-led homepage with a research-group homepage centered 
 
 ## Member Order and Labels
 
-Every member is presented in ascending order by full-name Pinyin. Leadership does not change position in the list; it is expressed only through a role label.
+Every member is presented in ascending order by full-name Pinyin. Leadership does not change position in the list; it is expressed only through a role label. The team section includes the small annotation: **“成员按姓名拼音顺序排列 / Members listed alphabetically by Pinyin.”**
 
-1. **郭家腾 — Guo Jiateng (G)** · Core Technology Member / 核心技术成员
+1. **郭家腾 — Guo Jiateng (G)** · Team Member / 团队成员
 2. **李瀚翔 — Li Hanxiang (L)** · Team Member / 团队成员
 3. **刘珂 — Liu Ke (L)** · Team Member / 团队成员
 4. **孙若琳 — Sun Ruolin (S)** · Team Member / 团队成员
 5. **汤若铭 — Tang Ruoming (T)** · Team Member / 团队成员
 6. **汪慕白 — Wang Mubai (W)** · Team Member / 团队成员
-7. **王翊航 — Wang Yihang (W)** · Team Lead & Core Technology Member / 团队负责人、核心技术成员
-8. **赵以鑫 — Zhao Yixin (Z)** · Core Technology Member / 核心技术成员
+7. **王翊航 — Wang Yihang (W)** · Team Lead / 团队负责人
+8. **赵以鑫 — Zhao Yixin (Z)** · Team Member / 团队成员
 
 Corrections from the supplied source slides:
 
@@ -60,7 +60,7 @@ A horizontal documentary-film sequence uses selected development photographs. It
 
 ### 5. Team
 
-Members follow the confirmed Pinyin order. Each entry includes Chinese name, romanization, and verified role label. Portraits are small, low-contrast supporting elements rather than large profile cards. Unverified personal achievements will not be inferred from the slide imagery; supplied wording will be transcribed conservatively.
+Members follow the confirmed Pinyin order. Each entry includes Chinese name, romanization, and role label. Only Wang Yihang is labeled Team Lead; every other person is labeled Team Member. A small bilingual note explicitly states that the list is ordered alphabetically by Pinyin. Portraits are small, low-contrast supporting elements rather than large profile cards. Unverified personal achievements will not be inferred from the slide imagery; supplied wording will be transcribed conservatively.
 
 ### 6. Place and Contact
 
