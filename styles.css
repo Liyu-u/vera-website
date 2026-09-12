@@ -58,3 +58,16 @@
   body .team.viewport-panel .member-card img{width:100%;height:100%;object-fit:cover;object-position:center top}
   body .team.viewport-panel .member-lead figure{width:clamp(150px,13vw,205px);height:auto;aspect-ratio:4/5}
 }
+
+/* Desktop chapter snapping keeps every research panel precisely framed. */
+@media(min-width:901px) and (min-height:641px){
+  html{scroll-snap-type:y mandatory;scroll-padding-top:0}
+  body .viewport-panel,body [data-viewport-panel]{scroll-snap-align:start;scroll-snap-stop:always;scroll-margin-top:0}
+  body .outcomes{position:relative}
+  body .outcomes>.section-head{position:absolute;z-index:2;top:clamp(82px,11vh,96px);right:var(--pad);left:var(--pad);margin:0}
+  body .outcomes .outcome.viewport-panel:first-of-type{padding-top:clamp(118px,16vh,164px)}
+  body .outcomes .outcome.viewport-panel figure img{height:clamp(320px,60vh,590px)}
+}
+@media(max-width:900px),(max-height:640px),(prefers-reduced-motion:reduce){
+  html{scroll-snap-type:none}
+}
