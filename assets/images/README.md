@@ -1,6 +1,6 @@
 # Image provenance
 
-All photographs in this directory were supplied by the VERA team for public use. They are copied without generative alteration and cropped only through CSS at render time.
+All photographs in this directory were supplied by the VERA team for public use. They are copied without generative alteration. Files under `portraits/` are pixel-preserving crops from the two supplied member overview images; no face generation, identity alteration, or retouching was applied.
 
 | Website asset | Original filename |
 |---|---|

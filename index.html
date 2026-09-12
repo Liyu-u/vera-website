@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="VERA — Verbal-to-Embodied Reasoning and Action，学生创新研究团队。">
   <title>VERA — Verbal-to-Embodied Reasoning and Action</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./motion.css">
 </head>
@@ -20,10 +21,14 @@
 
   <main id="top">
     <section class="hero">
-      <div class="hero-media" data-parallax>
-        <img src="./assets/images/team-meeting.jpg" alt="VERA 团队成员围绕实验方案开展讨论">
+      <div class="hero-field" data-hero-field aria-hidden="true">
+        <div class="hero-lab" data-hero-lab><img src="./assets/images/robotic-arm-lab.jpg" alt="机械臂实验平台局部影像"></div>
+        <div class="hero-aura"></div>
+        <div class="orbit orbit-a" data-orbit><i></i><i></i><i></i></div>
+        <div class="orbit orbit-b" data-orbit><i></i><i></i></div>
+        <div class="signal-line signal-a"></div><div class="signal-line signal-b"></div>
+        <div class="hero-core"><span>LANGUAGE</span><strong>REASONING</strong><span>ACTION</span></div>
       </div>
-      <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-copy">
         <h1>VERA</h1>
         <p class="hero-name">VERBAL-TO-EMBODIED<br>REASONING AND ACTION</p>
@@ -38,24 +43,24 @@
         <p>VERA 关注自然语言、任务推理、机器人感知与安全执行之间的连接。系统不是终点，而是我们验证研究问题的一种方式。</p>
       </div>
       <div class="research-lines">
-        <article data-reveal><span>Language</span><h3>语言与任务理解</h3><p>研究开放式人类意图如何被澄清、约束，并与环境中的真实对象建立可靠对应。</p></article>
-        <article data-reveal><span>Reasoning</span><h3>具身任务推理</h3><p>把目标转化为能够被机器人执行的步骤，让策略生成接受环境、安全和能力边界的共同约束。</p></article>
-        <article data-reveal><span>Action</span><h3>安全执行与反馈</h3><p>关注执行前检查、过程监测、结果取证以及失败后的有限修复，使行动过程可以被复核。</p></article>
+        <article data-reveal data-research-row><span>Language</span><h3>语言与任务理解</h3><p>研究开放式人类意图如何被澄清、约束，并与环境中的真实对象建立可靠对应。</p></article>
+        <article data-reveal data-research-row><span>Reasoning</span><h3>具身任务推理</h3><p>把目标转化为能够被机器人执行的步骤，让策略生成接受环境、安全和能力边界的共同约束。</p></article>
+        <article data-reveal data-research-row><span>Action</span><h3>安全执行与反馈</h3><p>关注执行前检查、过程监测、结果取证以及失败后的有限修复，使行动过程可以被复核。</p></article>
       </div>
     </section>
 
     <section class="outcomes section-shell" id="outcomes">
       <header class="section-head" data-reveal><h2>研究成果</h2><p>SELECTED OUTCOMES</p></header>
       <article class="outcome outcome-wide" data-reveal>
-        <figure><img src="./assets/images/robotic-arm-lab.jpg" alt="实验室工业机械臂与传感器实验平台"><figcaption>ROBOTIC MANIPULATION · LAB EQUIPMENT</figcaption></figure>
+        <figure data-scroll-media><img src="./assets/images/robotic-arm-lab.jpg" alt="实验室工业机械臂与传感器实验平台"><figcaption>ROBOTIC MANIPULATION · LAB EQUIPMENT</figcaption></figure>
         <div><span>具身执行实验</span><h3>面向复杂环境的感知、决策与执行</h3><p>围绕机械臂、传感器与任务环境开展具身执行研究，持续验证从指令理解到动作反馈的完整链路。</p></div>
       </article>
       <article class="outcome outcome-offset" data-reveal>
-        <figure><img src="./assets/images/robot-dog-debugging.jpg" alt="团队成员在实验室调试四足机器人"><figcaption>FIELD DEBUGGING · QUADRUPED ROBOT</figcaption></figure>
+        <figure data-scroll-media><img src="./assets/images/robot-dog-debugging.jpg" alt="团队成员在实验室调试四足机器人"><figcaption>FIELD DEBUGGING · QUADRUPED ROBOT</figcaption></figure>
         <div><span>机器人现场调试</span><h3>让算法经得起真实设备与现场条件</h3><p>通过设备连接、遥操作与现场观察，记录算法假设与机器人实际表现之间的差异。</p></div>
       </article>
       <article class="outcome outcome-dark" data-reveal>
-        <figure><img src="./assets/images/server-room-collaboration.jpg" alt="团队成员在机房共同检查实验运行数据"><figcaption>SYSTEM VALIDATION · COLLABORATIVE TESTING</figcaption></figure>
+        <figure data-scroll-media><img src="./assets/images/server-room-collaboration.jpg" alt="团队成员在机房共同检查实验运行数据"><figcaption>SYSTEM VALIDATION · COLLABORATIVE TESTING</figcaption></figure>
         <div><span>系统联调与验证</span><h3>以可复现过程积累研究证据</h3><p>从模块接口到完整流程，团队共同完成联调、记录和复核，并明确区分仿真、测试与真实环境结论。</p></div>
       </article>
     </section>
@@ -79,15 +84,15 @@
 
     <section class="team section-shell" id="team">
       <header class="section-head" data-reveal><h2>团队成员</h2><p>成员按姓名拼音顺序排列<br>Members listed alphabetically by Pinyin</p></header>
-      <div class="team-list">
-        <article data-member="Guo Jiateng" data-reveal><div class="portrait crop-b guo"><img src="./assets/images/members-b.png" alt="郭家腾证件照"></div><div><h3>郭家腾</h3><p>Guo Jiateng</p></div><span>团队成员</span></article>
-        <article data-member="Li Hanxiang" data-reveal><div class="portrait crop-a li"><img src="./assets/images/members-a.png" alt="李瀚翔证件照"></div><div><h3>李瀚翔</h3><p>Li Hanxiang</p></div><span>团队成员</span></article>
-        <article data-member="Liu Ke" data-reveal><div class="portrait crop-a liu"><img src="./assets/images/members-a.png" alt="刘珂证件照"></div><div><h3>刘珂</h3><p>Liu Ke</p></div><span>团队成员</span></article>
-        <article data-member="Sun Ruolin" data-reveal><div class="portrait crop-a sun"><img src="./assets/images/members-a.png" alt="孙若琳证件照"></div><div><h3>孙若琳</h3><p>Sun Ruolin</p></div><span>团队成员</span></article>
-        <article data-member="Tang Ruoming" data-reveal><div class="portrait crop-a tang"><img src="./assets/images/members-a.png" alt="汤若铭证件照"></div><div><h3>汤若铭</h3><p>Tang Ruoming</p></div><span>团队成员</span></article>
-        <article data-member="Wang Mubai" data-reveal><div class="portrait crop-b mubai"><img src="./assets/images/members-b.png" alt="汪慕白证件照"></div><div><h3>汪慕白</h3><p>Wang Mubai</p></div><span>团队成员</span></article>
-        <article data-member="Wang Yihang" data-reveal><div class="portrait crop-b yihang"><img src="./assets/images/members-b.png" alt="王翊航证件照"></div><div><h3>王翊航</h3><p>Wang Yihang</p></div><span class="lead-role">团队负责人</span></article>
-        <article data-member="Zhao Yixin" data-reveal><div class="portrait crop-b zhao"><img src="./assets/images/members-b.png" alt="赵以鑫证件照"></div><div><h3>赵以鑫</h3><p>Zhao Yixin</p></div><span>团队成员</span></article>
+      <div class="team-grid">
+        <article class="member-card member-lead" data-member="Wang Yihang" data-reveal data-member-card><figure><img src="./assets/images/portraits/wang-yihang.png" alt="王翊航彩色证件照"></figure><div><span class="lead-role">团队负责人</span><h3>王翊航</h3><p>Wang Yihang</p></div></article>
+        <article class="member-card" data-member="Guo Jiateng" data-reveal data-member-card><figure><img src="./assets/images/portraits/guo-jiateng.png" alt="郭家腾彩色证件照"></figure><div><span>团队成员</span><h3>郭家腾</h3><p>Guo Jiateng</p></div></article>
+        <article class="member-card" data-member="Li Hanxiang" data-reveal data-member-card><figure><img src="./assets/images/portraits/li-hanxiang.png" alt="李瀚翔彩色证件照"></figure><div><span>团队成员</span><h3>李瀚翔</h3><p>Li Hanxiang</p></div></article>
+        <article class="member-card" data-member="Liu Ke" data-reveal data-member-card><figure><img src="./assets/images/portraits/liu-ke.png" alt="刘珂彩色证件照"></figure><div><span>团队成员</span><h3>刘珂</h3><p>Liu Ke</p></div></article>
+        <article class="member-card" data-member="Sun Ruolin" data-reveal data-member-card><figure><img src="./assets/images/portraits/sun-ruolin.png" alt="孙若琳彩色证件照"></figure><div><span>团队成员</span><h3>孙若琳</h3><p>Sun Ruolin</p></div></article>
+        <article class="member-card" data-member="Tang Ruoming" data-reveal data-member-card><figure><img src="./assets/images/portraits/tang-ruoming.png" alt="汤若铭彩色证件照"></figure><div><span>团队成员</span><h3>汤若铭</h3><p>Tang Ruoming</p></div></article>
+        <article class="member-card" data-member="Wang Mubai" data-reveal data-member-card><figure><img src="./assets/images/portraits/wang-mubai.png" alt="汪慕白彩色证件照"></figure><div><span>团队成员</span><h3>汪慕白</h3><p>Wang Mubai</p></div></article>
+        <article class="member-card" data-member="Zhao Yixin" data-reveal data-member-card><figure><img src="./assets/images/portraits/zhao-yixin.png" alt="赵以鑫彩色证件照"></figure><div><span>团队成员</span><h3>赵以鑫</h3><p>Zhao Yixin</p></div></article>
       </div>
     </section>
 
